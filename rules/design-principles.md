@@ -1,7 +1,6 @@
 # Design Principles
 
 > Defines the design evaluation criteria (cohesion, coupling) and the concrete rules (SOLID) used to achieve them.
-> Referenced by `code-style.md` for structural decisions; referenced by `plan_guideline.md` when judging whether a step is [Structural].
 
 ---
 
@@ -60,11 +59,3 @@ Don't force a class to depend on methods it doesn't use.
 High-level modules (services) must depend on abstractions, not concrete low-level implementations (e.g., a specific SMTP client).
 
 - Violation signal: a service instantiates a concrete class directly instead of receiving it
-
----
-
-## Related Documents
-
-- `code-style.md` — naming, structure, and typing conventions that these principles justify
-- `plan_guideline.md` — use these heuristics to decide whether a plan step is [Structural] or [Behavioral]
-- `tdd-principles.md` — apply these principles during the Refactor step of the TDD cycle

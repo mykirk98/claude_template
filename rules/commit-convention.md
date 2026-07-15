@@ -1,7 +1,5 @@
 # Git Commit Message Convention
 
-> This document defines the commit message rules that Claude Code agent must follow when creating commits.
-
 ---
 
 ## Format
@@ -48,8 +46,6 @@
 
 ```
 feat(auth): add OAuth2 social login
-fix(api): return 404 instead of 500 for missing user
-docs: update README with docker setup instructions
 ```
 
 ---
@@ -79,11 +75,6 @@ Append `!` to the type or include `BREAKING CHANGE:` in the footer.
 
 ```
 feat(api)!: rename user.name to user.fullName
-
-BREAKING CHANGE: `user.name` has been renamed to `user.fullName`.
-Clients must migrate before deploying this version.
-
-Closes #102
 ```
 
 ---
@@ -94,9 +85,3 @@ Closes #102
 - Always make structural commits before behavioral commits when both are needed
 - Only commit when all tests pass
 - Prefer small, frequent commits over large, infrequent ones
-
-```
-refactor(payment): extract discount calculation into helper
-
-feat(payment): apply loyalty discount for returning users
-```

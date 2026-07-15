@@ -58,6 +58,7 @@ docs: update README with docker setup instructions
 
 - Separate from the subject with a **blank line**
 - Explain **why** the change was made, not what was changed
+- Write each paragraph as a single line — do not insert manual line breaks (e.g. 72-char wrap) within it
 - Do not mention co-Authored by AI 
 
 ---

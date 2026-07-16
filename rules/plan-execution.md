@@ -31,27 +31,7 @@
 - Log file naming: `<plan-filename>-log.md` (e.g. `plan01.md` → `plan01-log.md`).
 - If the log file does not exist, create it.
 
-Each log entry must include:
-
-```markdown
-## Step N: <Step Title>
-
-### Commands executed
-```bash
-# list every command run, in order
-```
-
-### Issues and resolutions
-| Issue | Cause | Resolution |
-|-------|-------|------------|
-| ...   | ...   | ...        |
-
-(Write "None" if no issues occurred.)
-
-### Result
-- What was completed and verified
-- Lint/build/test results if applicable
-```
+Each log entry must follow the format in `template/plan-log-template.md`.
 
 ### 6. Commit after each step
 - When a step is complete, commit the code changes with an appropriate type (`feat`, `fix`, `refactor`, etc.).

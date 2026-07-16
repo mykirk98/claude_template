@@ -13,7 +13,7 @@
 ```
 
 - **type**: required
-- **scope**: optional — the module, component, or area affected
+- **scope**: required — the module, component, or area affected
 - **subject**: required
 - **body**: optional — explain *why*, not *what*
 - **footer**: optional — issue references, breaking changes
@@ -34,6 +34,8 @@
 | `perf` | Performance improvements |
 | `ci` | CI/CD configuration changes |
 | `revert` | Reverting a previous commit |
+
+When a change spans multiple types, classify by outward-observable effect, in this order: `feat`/`fix` > `perf` > `refactor` > `style`. Prefer splitting the commit per Commit Discipline over picking a mixed type.
 
 ---
 

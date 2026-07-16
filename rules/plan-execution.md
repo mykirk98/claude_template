@@ -8,8 +8,7 @@
 ## Execution Rules
 
 ### 1. One task at a time
-- Execute only the **first unchecked** `- [ ]` item in the list.
-- Never move on to the next task before the current one is complete.
+- Execute only the **first unchecked** `- [ ]` item in the list — never move on to the next until it is complete.
 
 ### 2. All completion criteria must be met
 - If a task includes `Acceptance Criteria:`, every criterion must be satisfied before the task is considered done.
@@ -17,8 +16,7 @@
 
 ### 3. Stop after completion
 - When a task is done, update `- [ ]` to `- [x]`.
-- Then **stop immediately** and wait for human review.
-- Do not start the next task on your own — proceed only upon approval.
+- Then **stop immediately** and wait for human review — do not resume until approved.
 
 ### 4. Stay within scope
 - Do not modify any file, module, or feature not mentioned in the task.

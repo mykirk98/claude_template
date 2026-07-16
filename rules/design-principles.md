@@ -10,16 +10,14 @@ These are the two axes used to evaluate whether a design is good. SOLID (below) 
 
 ### Cohesion — keep high
 
-A module/class should contain only code related to a single responsibility.
-
 - Methods in a class should operate on the same fields/state
 - If a class's methods split into groups that never touch the same data, it should be split into separate classes
+- Smell: a `UserService` that both authenticates users and sends emails — split into `AuthService` and `NotificationService`
 
 ### Coupling — keep low
 
 A module should depend on as few details of other modules as possible.
 
-- Depend on abstractions (`ABC`), not concrete implementations
 - Dependency direction must follow the layering in `code-style.md`: `api/` → `services/` → `repositories/` (never reversed)
 - No circular references between modules
 - Avoid a function/class needing to know another class's internal state to do its job (a sign of excessive coupling)

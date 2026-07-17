@@ -49,13 +49,10 @@ src/
 ```python
 from __future__ import annotations
 
-def find_user(user_id: str) -> UserProfile | None: ...
-
-@dataclass
-class UserProfile:
-    id: str
-    name: str
-    created_at: datetime
+def parse_webhook_payload(raw: object) -> UserProfile | None:
+    if not isinstance(raw, dict):
+        return None
+    return UserProfile(**raw)
 ```
 
 ---

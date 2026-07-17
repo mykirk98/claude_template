@@ -6,14 +6,10 @@
 
 ```
 1. Human writes a plan draft and shares the file path with Claude
-2. Claude reads the draft and identifies gaps:
-   - Steps that are too broad or vague
-   - Missing or incomplete Acceptance Criteria
-   - Structural and behavioral changes that are mixed in the same step
-   - Unresolved decisions that need clarification
+2. Claude reads the draft, concretizes the steps, checks it against Writing Steps, and raises any gaps found
 3. Claude and human refine the plan together
 4. Human gives final approval
-5. Claude begins execution — see `plan_execution.md` for execution rules
+5. Claude begins execution — see `plan-execution.md` for execution rules
 ```
 
 ---
@@ -31,7 +27,7 @@ One or two sentences describing what this plan achieves and why.
 - **Out:** 
 
 ## Steps
-- [ ] Step 1: [Structural / Behavioral]<description>
+- [ ] Step 1: [Structural or Behavioral] <description>
   Acceptance Criteria:
   - <specific condition that must be true for this step to be complete>
   - <another condition>
@@ -42,13 +38,14 @@ One or two sentences describing what this plan achieves and why.
 
 ---
 
-## How to Write Steps
+## Writing Steps
 
 - Each step is one functional unit — a coherent piece of behavior that can be built and tested independently
 - Steps must be ordered by dependency (earlier steps should not rely on later ones)
 - Each step title should describe **what behavior is being added**, not what code is being written
 - Never mix structural changes (refactoring) and behavioral changes (new functionality) in the same step — structural steps always come first
 - Every step must include Acceptance Criteria — these define what tests need to pass for the step to be considered complete
+- If something needs to be discussed with the human, or you have a better idea, leave it in Open Questions
 
 ```markdown
 - [ ] Step 1: [Behavioral] Add loyalty discount for returning users
@@ -56,11 +53,3 @@ One or two sentences describing what this plan achieves and why.
   - 3회 이상 구매한 사용자에게 10% 할인이 적용된다
   - 신규 사용자에게는 할인이 적용되지 않는다
 ```
-
----
-
-## Claude's Review Checklist
-
-When receiving a plan draft, Claude checks it against the rules above, plus:
-
-- [ ] Are there any Open Questions that need resolution before starting?

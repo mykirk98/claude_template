@@ -1,8 +1,5 @@
 # Plan Guideline
 
-> The human writes the plan draft. Claude reviews it, improves it collaboratively, and executes it after approval.
-> This guideline defines how to write and refine a plan.
-
 ---
 
 ## Workflow
@@ -54,11 +51,7 @@ One or two sentences describing what this plan achieves and why.
 - Every step must include Acceptance Criteria — these define what tests need to pass for the step to be considered complete
 
 ```markdown
-- [ ] Step 1: [Structural] Extract payment validation into helper
-  Acceptance Criteria:
-  - 기존 테스트가 모두 통과한다 (동작 변경 없음)
-
-- [ ] Step 2: [Behavioral] Add loyalty discount for returning users
+- [ ] Step 1: [Behavioral] Add loyalty discount for returning users
   Acceptance Criteria:
   - 3회 이상 구매한 사용자에게 10% 할인이 적용된다
   - 신규 사용자에게는 할인이 적용되지 않는다
@@ -68,10 +61,6 @@ One or two sentences describing what this plan achieves and why.
 
 ## Claude's Review Checklist
 
-When receiving a plan draft, Claude checks the following and raises issues before execution:
+When receiving a plan draft, Claude checks it against the rules above, plus:
 
-- [ ] Does every step have a clear, behavior-focused title?
-- [ ] Does every step have Acceptance Criteria?
-- [ ] Are structural and behavioral changes separated into different steps?
-- [ ] Are steps ordered by dependency?
 - [ ] Are there any Open Questions that need resolution before starting?

@@ -12,18 +12,6 @@
 - Booleans: must start with `is_`, `has_`, `can_`, or `should_`
 - Type aliases & Protocols: `PascalCase`, defined at module level
 
-```python
-is_authenticated = True
-MAX_RETRY_COUNT = 3
-UserId = str
-
-class UserProfileService:
-    def __init__(self, db: Database) -> None:
-        self._db = db
-    def get_profile(self, user_id: str) -> UserProfile: ...
-    def _validate_id(self, user_id: str) -> bool: ...
-```
-
 ---
 
 ## File & Module Structure
@@ -125,36 +113,9 @@ class EmailNotificationService(NotificationService):
 - Order: standard library → third-party → internal (absolute only)
 - Never use relative imports or wildcard imports
 
-```python
-from __future__ import annotations
-import asyncio
-from datetime import datetime
-
-import httpx
-from pydantic import BaseModel
-
-from src.services.user import UserService
-```
-
 ---
 
 ## Docstrings
 
 - Required on all public classes, methods, and functions
 - Use Google-style docstrings; skip `Args`/`Returns` for simple, self-evident functions
-
-```python
-def calculate_discount(price: float, rate: float) -> float:
-    """Calculate the discounted price.
-
-    Args:
-        price: Original price in KRW.
-        rate: Discount rate as a decimal (e.g., 0.1 for 10%).
-
-    Returns:
-        Discounted price rounded to 2 decimal places.
-
-    Raises:
-        ValueError: If rate is not between 0 and 1.
-    """
-```

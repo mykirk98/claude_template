@@ -1,4 +1,4 @@
-# Code Style Guide
+# Python Code Style Guide
 
 > Rules for Python projects across a large team. Apply these consistently across all files and services.
 
@@ -16,24 +16,10 @@
 
 ## File & Module Structure
 
-```
-src/
-├── api/               # HTTP layer — routers, request/response schemas
-├── services/          # Business logic — stateless, testable
-├── repositories/      # Data access layer — DB queries only
-├── models/            # ORM models or dataclasses
-├── schemas/           # Pydantic/dataclass schemas for validation
-├── core/              # Config, logging, dependency injection setup
-├── lib/               # Shared utilities and helpers
-└── tests/
-    ├── unit/
-    ├── integration/
-    └── conftest.py
-```
-
-- One class per file for service and repository classes
-- Never put business logic in `api/` layer — delegate to `services/`
-- Test files mirror the source structure (`services/user.py` → `tests/unit/services/test_user.py`)
+- Group code by layer: entry/presentation → business logic → data access — dependency direction must follow this order, never reversed
+- Keep business logic out of the entry/presentation layer — delegate to the business logic layer
+- One class per file for non-trivial classes
+- Split tests into `unit/` and `integration/`, mirroring the source structure with a `test_` prefix (e.g. `foo/bar.py` → `tests/unit/foo/test_bar.py`)
 
 ---
 

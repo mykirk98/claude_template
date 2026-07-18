@@ -18,7 +18,7 @@ These are the two axes used to evaluate whether a design is good. SOLID (below) 
 
 A module should depend on as few details of other modules as possible.
 
-- Dependency direction must follow the layering in `code-style.md`: `api/` → `services/` → `repositories/` (never reversed)
+- Dependency direction across layers must be one-way, never reversed
 - No circular references between modules
 - Avoid a function/class needing to know another class's internal state to do its job (a sign of excessive coupling)
 

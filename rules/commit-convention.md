@@ -46,10 +46,6 @@ When a change spans multiple types, classify by outward-observable effect, in th
 - Do **not** end with a period
 - Be specific and descriptive
 
-```
-feat(auth): add OAuth2 social login
-```
-
 ---
 
 ## Body Rules
@@ -74,10 +70,6 @@ feat(auth): add OAuth2 social login
 ### Breaking Changes
 
 Append `!` to the type or include `BREAKING CHANGE:` in the footer.
-
-```
-feat(api)!: rename user.name to user.fullName
-```
 
 ---
 

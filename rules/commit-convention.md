@@ -83,6 +83,7 @@ feat(api)!: rename user.name to user.fullName
 
 ## Commit Discipline
 
+- Structural vs behavioral change definitions follow `tdd-principles.md`
 - Never mix structural (`refactor`) and behavioral (`feat`, `fix`) changes in one commit
 - Always make structural commits before behavioral commits when both are needed
 - Only commit when all tests pass

@@ -1,7 +1,6 @@
 # TDD Principles
  
 > Follows Kent Beck's Test-Driven Development and Tidy First principles.
-> Commit discipline lives in `commit-convention.md`.
 
 ---
 
@@ -42,7 +41,6 @@ Separate all changes into two distinct types:
 Rules:
 - Always make structural changes first when both are needed
 - Validate structural changes do not alter behavior by running tests before and after
-- For commit rules, see `commit-convention.md`
 
 ---
 

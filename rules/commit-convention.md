@@ -1,4 +1,4 @@
-# Git Commit Message Convention
+# Git Commit Convention
 
 ---
 

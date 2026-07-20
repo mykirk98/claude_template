@@ -41,6 +41,7 @@ Separate all changes into two distinct types:
 Rules:
 - Always make structural changes first when both are needed
 - Validate structural changes do not alter behavior by running tests before and after
+- Commit structural changes separately from and before behavioral changes, using the format in `commit-convention.md`
 
 ---
 

@@ -75,8 +75,6 @@ Append `!` to the type or include `BREAKING CHANGE:` in the footer.
 
 ## Commit Discipline
 
-- Structural vs behavioral change definitions follow `tdd-principles.md`
-- Never mix structural (`refactor`) and behavioral (`feat`, `fix`) changes in one commit
-- Always make structural commits before behavioral commits when both are needed
+- Keep unrelated changes in separate commits
 - Only commit when all tests pass
 - Prefer small, frequent commits over large, infrequent ones

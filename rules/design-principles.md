@@ -6,7 +6,7 @@
 
 ## Cohesion & Coupling
 
-These are the two axes used to evaluate whether a design is good. SOLID (below) is a set of concrete rules for improving both.
+These are the two axes used to evaluate whether a design is good.
 
 ### Cohesion — keep high
 
@@ -25,8 +25,6 @@ A module should depend on as few details of other modules as possible.
 ---
 
 ## SOLID
-
-Concrete rules for achieving high cohesion and low coupling.
 
 ### S — Single Responsibility Principle
 

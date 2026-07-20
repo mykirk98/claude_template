@@ -12,7 +12,7 @@ These are the two axes used to evaluate whether a design is good.
 
 - Methods in a class should operate on the same fields/state
 - If a class's methods split into groups that never touch the same data, it should be split into separate classes
-- Smell: a `UserService` that both authenticates users and sends emails — split into `AuthService` and `NotificationService`
+- Smell: an `ItemManager` that both validates items and logs analytics events — split into `ItemValidator` and `AnalyticsLogger`
 
 ### Coupling — keep low
 

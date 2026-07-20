@@ -54,6 +54,6 @@ Don't force a class to depend on methods it doesn't use.
 
 ### D — Dependency Inversion Principle
 
-High-level modules (services) must depend on abstractions, not concrete low-level implementations (e.g., a specific SMTP client).
+High-level modules (services) must depend on abstractions, not concrete low-level implementations.
 
 - Violation signal: a service instantiates a concrete class directly instead of receiving it

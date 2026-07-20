@@ -35,10 +35,10 @@
 ```python
 from __future__ import annotations
 
-def parse_webhook_payload(raw: object) -> UserProfile | None:
+def parse_item(raw: object) -> Item | None:
     if not isinstance(raw, dict):
         return None
-    return UserProfile(**raw)
+    return Item(**raw)
 ```
 
 ---
@@ -48,24 +48,19 @@ def parse_webhook_payload(raw: object) -> UserProfile | None:
 - One responsibility per function; max **40 lines**, max **5 parameters**
 - Prefer early returns over nested conditionals
 - Always catch specific exceptions — never use bare `except:`
-- Raise domain-specific exceptions from the service layer; let the API layer handle HTTP translation
+- Raise domain-specific exceptions from the business logic layer; let the entry/presentation layer handle translation to the external-facing format (e.g., HTTP status, exit code)
 - Never mix sync blocking calls into async functions; use `asyncio.gather` for concurrent operations
 
 ```python
-def process_payment(payment: Payment) -> Receipt:
-    if not payment.is_valid():
-        raise ValueError("Invalid payment")
-    if payment.amount <= 0:
-        raise ValueError("Amount must be positive")
-    return _execute_payment(payment)
+def load_dependency(dependency_id: str) -> Dependency:
+    try:
+        return registry.lookup(dependency_id)
+    except KeyError as e:
+        logger.error("Dependency not found", extra={"dependency_id": dependency_id})
+        raise DependencyError("Required dependency unavailable") from e
 
-try:
-    result = external_api.call(payload)
-except requests.Timeout as e:
-    logger.error("External API timed out", extra={"payload": payload})
-    raise ExternalServiceError("Payment service unavailable") from e
-
-user, orders = await asyncio.gather(fetch_user(user_id), fetch_orders(user_id))
+async def fetch_item_with_related(item_id: str) -> tuple[Item, list[Item]]:
+    return await asyncio.gather(fetch_item(item_id), fetch_related_items(item_id))
 ```
 
 ---
@@ -78,15 +73,15 @@ user, orders = await asyncio.gather(fetch_user(user_id), fetch_orders(user_id))
 - Keep `__init__` free of logic — use class methods or factory functions for complex construction
 
 ```python
-class NotificationService(ABC):
+class ItemExporter(ABC):
     @abstractmethod
-    def send(self, recipient: str, message: str) -> None: ...
+    def export(self, items: list[Item]) -> None: ...
 
-class EmailNotificationService(NotificationService):
-    def __init__(self, smtp_client: SmtpClient) -> None:
-        self._smtp = smtp_client
-    def send(self, recipient: str, message: str) -> None:
-        self._smtp.send_email(to=recipient, body=message)
+class FileItemExporter(ItemExporter):
+    def __init__(self, writer: Writer) -> None:
+        self._writer = writer
+    def export(self, items: list[Item]) -> None:
+        self._writer.write(items)
 ```
 
 ---

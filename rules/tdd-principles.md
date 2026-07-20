@@ -1,6 +1,6 @@
 # TDD Principles
  
-> Follows Kent Beck's Test-Driven Development cycle. For separating structural and behavioral changes, see `tidy-first.md`.
+> Follows Kent Beck's Test-Driven Development cycle.
 
 ---
 

@@ -31,7 +31,7 @@ Plan structure follows `template/plan-template.md`.
 - Each step is one functional unit — a coherent piece of behavior that can be built and tested independently
 - Steps must be ordered by dependency (earlier steps should not rely on later ones)
 - Each step title should describe what's changing — new behavior for `[Behavioral]` steps, restructuring for `[Structural]` steps — not what code is being written
-- Never mix structural changes (refactoring) and behavioral changes (new functionality) in the same step — structural steps always come first
+- Never mix structural and behavioral changes (see `tidy-first.md` for the definitions) in the same step — structural steps always come first
 - Every step must include Acceptance Criteria — these define what tests need to pass for the step to be considered complete
 
 ```markdown

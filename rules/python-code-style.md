@@ -1,6 +1,6 @@
 # Python Code Style Guide
 
-> Rules for Python projects across a large team.
+> Rules for Python projects.
 
 ---
 

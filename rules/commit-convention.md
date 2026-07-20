@@ -69,7 +69,8 @@
 
 ### Breaking Changes
 
-Append `!` to the type or include `BREAKING CHANGE:` in the footer.
+- Append `!` right before the colon (after the scope, if present)
+- Or include `BREAKING CHANGE:` in the footer
 
 ---
 

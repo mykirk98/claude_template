@@ -6,7 +6,7 @@
 
 ```
 1. Human writes a plan draft and shares the file path with Claude
-2. Claude reads the draft, concretizes the steps, checks it against Writing Steps, and raises any gaps found
+2. Claude reads the draft, refines the Steps to satisfy Writing Steps, and raises any gaps found
 3. Claude and human refine the plan together
 4. Human gives final approval
 5. Claude begins execution — see `plan-execution.md` for execution rules

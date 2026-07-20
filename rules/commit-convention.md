@@ -27,7 +27,7 @@
 | `feat` | A new feature |
 | `fix` | A bug fix |
 | `docs` | Documentation changes only |
-| `style` | Formatting, whitespace, missing semicolons (no logic change) |
+| `style` | Formatting, whitespace (no logic change) |
 | `refactor` | Code restructuring with no feature or bug change |
 | `test` | Adding or updating tests |
 | `chore` | Build process, dependency updates, tooling |
@@ -35,7 +35,7 @@
 | `ci` | CI/CD configuration changes |
 | `revert` | Reverting a previous commit |
 
-When a change spans multiple types, classify by outward-observable effect, in this order: `feat`/`fix` > `perf` > `refactor` > `style`. Prefer splitting the commit per Commit Discipline over picking a mixed type.
+- If a commit still spans multiple types, classify by outward-observable effect: `feat`/`fix` > `perf` > `refactor` > `style`
 
 ---
 

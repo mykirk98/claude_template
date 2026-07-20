@@ -4,13 +4,11 @@
 
 ## Workflow
 
-```
 1. Human writes a plan draft and shares the file path with Claude
 2. Claude reads the draft, refines the Steps to satisfy Writing Steps, and raises any gaps found
 3. Claude and human refine the plan together
-4. Human gives final approval
-5. Claude begins execution — see `plan-execution.md` for execution rules
-```
+4. Human gives final approval to begin execution
+5. Claude begins execution — per-step review from there on is governed by `plan-execution.md`
 
 ---
 

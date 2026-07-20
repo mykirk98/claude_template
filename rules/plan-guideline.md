@@ -20,6 +20,14 @@ Plan structure follows `template/plan-template.md`.
 
 ---
 
+## Writing Goal, Scope, and Open Questions
+
+- **Goal**: what the plan achieves and why, in 1-2 sentences — don't restate the Steps in detail
+- **Scope**: `In` lists touched files/directories at a glance, even if inferable from the Goal; `Out` lists only boundary decisions that aren't obvious from the Goal, not everything unrelated
+- **Open Questions**: if something needs to be discussed with the human, or you have a better idea, leave it here; every question must be resolved before final approval — if none remain, leave the section empty
+
+---
+
 ## Writing Steps
 
 - Each step is one functional unit — a coherent piece of behavior that can be built and tested independently
@@ -27,7 +35,6 @@ Plan structure follows `template/plan-template.md`.
 - Each step title should describe what's changing — new behavior for `[Behavioral]` steps, restructuring for `[Structural]` steps — not what code is being written
 - Never mix structural changes (refactoring) and behavioral changes (new functionality) in the same step — structural steps always come first
 - Every step must include Acceptance Criteria — these define what tests need to pass for the step to be considered complete
-- If something needs to be discussed with the human, or you have a better idea, leave it in Open Questions
 
 ```markdown
 - [ ] Step 1: [Structural] Extract discount calculation into a helper

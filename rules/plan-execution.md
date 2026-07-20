@@ -32,6 +32,6 @@
 Each log entry must follow the format in `template/plan-log-template.md`.
 
 ### 6. Commit after each step
-- When a step is complete, commit the code changes with an appropriate type (`feat`, `fix`, `refactor`, etc.).
+- When a step is complete, commit the code changes following `commit-convention.md`.
 - Do **not** include plan files (`plan*.md`, `plan*-log.md`) in this commit.
 - After **all** steps are complete, commit `plan*.md` and `plan*-log.md` together in a single `docs` commit.

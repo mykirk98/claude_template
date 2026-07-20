@@ -24,13 +24,17 @@ Plan structure follows `template/plan-template.md`.
 
 - Each step is one functional unit — a coherent piece of behavior that can be built and tested independently
 - Steps must be ordered by dependency (earlier steps should not rely on later ones)
-- Each step title should describe **what behavior is being added**, not what code is being written
+- Each step title should describe what's changing — new behavior for `[Behavioral]` steps, restructuring for `[Structural]` steps — not what code is being written
 - Never mix structural changes (refactoring) and behavioral changes (new functionality) in the same step — structural steps always come first
 - Every step must include Acceptance Criteria — these define what tests need to pass for the step to be considered complete
 - If something needs to be discussed with the human, or you have a better idea, leave it in Open Questions
 
 ```markdown
-- [ ] Step 1: [Behavioral] Add loyalty discount for returning users
+- [ ] Step 1: [Structural] Extract discount calculation into a helper
+  Acceptance Criteria:
+  - 기존 테스트가 모두 통과한다 (동작 변경 없음)
+
+- [ ] Step 2: [Behavioral] Add loyalty discount for returning users
   Acceptance Criteria:
   - 3회 이상 구매한 사용자에게 10% 할인이 적용된다
   - 신규 사용자에게는 할인이 적용되지 않는다

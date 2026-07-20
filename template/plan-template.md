@@ -8,11 +8,11 @@
 - **Out:** 
 
 ## Steps
-- [ ] Step 1: 
+- [ ] Step 1: [Structural or Behavioral] <description>
   Acceptance Criteria:
   - 
 
-- [ ] Step 2: 
+- [ ] Step 2: [Structural or Behavioral] <description>
   Acceptance Criteria:
   - 
 

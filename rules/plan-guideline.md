@@ -16,25 +16,7 @@
 
 ## Plan Structure
 
-```markdown
-# Plan: <Feature Name>
-
-## Goal
-One or two sentences describing what this plan achieves and why.
-
-## Scope
-- **In:** 
-- **Out:** 
-
-## Steps
-- [ ] Step 1: [Structural or Behavioral] <description>
-  Acceptance Criteria:
-  - <specific condition that must be true for this step to be complete>
-  - <another condition>
-
-## Open Questions
-- Any unresolved decisions or assumptions that need human input
-```
+Plan structure follows `template/plan-template.md`.
 
 ---
 

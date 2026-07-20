@@ -1,6 +1,6 @@
 # Python Code Style Guide
 
-> Rules for Python projects across a large team. Apply these consistently across all files and services.
+> Rules for Python projects across a large team.
 
 ---
 
@@ -18,7 +18,7 @@
 
 - Group code by layer: entry/presentation → business logic → data access — dependency direction must follow this order, never reversed
 - Keep business logic out of the entry/presentation layer — delegate to the business logic layer
-- One class per file for non-trivial classes
+- One class per file, except trivial classes (e.g., plain dataclasses or bare exception subclasses with no added methods), which may be grouped in one file
 - Split tests into `unit/` and `integration/`, mirroring the source structure with a `test_` prefix (e.g. `foo/bar.py` → `tests/unit/foo/test_bar.py`)
 
 ---
@@ -29,7 +29,7 @@
 - Use `from __future__ import annotations` at the top of every file
 - Use `X | None` instead of `Optional[X]`, `X | Y` instead of `Union[X, Y]` (Python 3.10+)
 - Never use `Any` — use `object` for truly unknown types
-- Use `dataclasses.dataclass` for internal structures, Pydantic `BaseModel` for API schemas
+- Use `dataclasses.dataclass` for internal structures, Pydantic `BaseModel` wherever runtime validation of external/untrusted input is needed (API schemas, config files, etc.)
 - Never use plain `dict` as a return type when a structured model can be defined
 
 ```python

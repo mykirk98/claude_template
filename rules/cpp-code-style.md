@@ -6,20 +6,21 @@
 
 ## Naming Conventions
 
-- Variables, functions, methods: `snake_case`
-- Private/protected member variables: trailing `_` (e.g., `size_`)
-- Constants & `constexpr` values: `snake_case` — reserve `SCREAMING_SNAKE_CASE` for macros only
+- Local variables, parameters, functions, and methods: `camelCase`
+- Private/protected member variables: `m_` prefix (e.g., `m_size`)
+- Type prefixes (Hungarian): pointers and smart pointers use `p`, `std::string` uses `str`, integers use `n` — placed after `m_` on members (e.g., `m_pDevice`, `m_strName`, local `pWidget`, `nCount`); containers, booleans, and class-type values take no type prefix
+- Constants & `constexpr` values: `SCREAMING_SNAKE_CASE`
 - Types (classes, structs, enums, aliases, concepts): `PascalCase`
 - Namespaces: `snake_case`; template parameters: `PascalCase`
 - Macros: `SCREAMING_SNAKE_CASE` — avoid macros unless there is no alternative
-- Booleans: must start with `is_`, `has_`, `can_`, or `should_`
+- Booleans: must start with `is`, `has`, `can`, or `should` (e.g., `isReady`, `m_hasError`)
 
 ---
 
 ## File & Module Structure
 
 - Group code by layer: entry/presentation → business logic → data access — dependency direction must follow this order, never reversed
-- Declarations go in headers (`.hpp`), definitions in `.cpp`; header-only is allowed for templates
+- Declarations go in headers (`.h`), definitions in `.cpp`; header-only is allowed for templates
 - Use `#pragma once` for header guards
 - One class per header, except trivial types (e.g., small POD structs or bare exception subclasses with no added methods), which may be grouped in one file
 - Namespaces mirror the directory structure
@@ -38,7 +39,7 @@
 - Pass non-trivial inputs by `const&`; use `std::string_view` and `std::span` for non-owning parameters; pass cheap types by value
 
 ```cpp
-[[nodiscard]] std::optional<Item> parse_item(std::string_view raw) {
+[[nodiscard]] std::optional<Item> parseItem(std::string_view raw) {
     if (raw.empty()) {
         return std::nullopt;
     }
@@ -67,11 +68,11 @@
 - Mark move constructors, move assignment, and non-throwing functions `noexcept`
 
 ```cpp
-Dependency load_dependency(const std::string& dependency_id) {
+Dependency loadDependency(const std::string& dependencyId) {
     try {
-        return registry.lookup(dependency_id);
+        return registry.lookup(dependencyId);
     } catch (const std::out_of_range& e) {
-        logger.error("Dependency not found: {}", dependency_id);
+        logger.error("Dependency not found: {}", dependencyId);
         throw DependencyError{"Required dependency unavailable"};
     }
 }
@@ -91,18 +92,18 @@ Dependency load_dependency(const std::string& dependency_id) {
 class ItemExporter {
 public:
     virtual ~ItemExporter() = default;
-    virtual void export_items(const std::vector<Item>& items) = 0;
+    virtual void exportItems(const std::vector<Item>& items) = 0;
 };
 
 class FileItemExporter final : public ItemExporter {
 public:
-    explicit FileItemExporter(Writer& writer) : writer_{writer} {}
-    void export_items(const std::vector<Item>& items) override {
-        writer_.write(items);
+    explicit FileItemExporter(Writer& writer) : m_writer{writer} {}
+    void exportItems(const std::vector<Item>& items) override {
+        m_writer.write(items);
     }
 
 private:
-    Writer& writer_;
+    Writer& m_writer;
 };
 ```
 

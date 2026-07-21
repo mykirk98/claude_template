@@ -68,6 +68,47 @@
 
 ---
 
+## Concurrency
+
+- Guard shared mutable state with a `std::mutex`, locked via RAII (`std::scoped_lock` / `std::lock_guard`) — never call `lock()`/`unlock()` manually
+- Use `std::atomic` for simple cross-thread flags and counters instead of a mutex
+- Signal between threads with `std::condition_variable`; always wait with a predicate to absorb spurious wakeups
+- Keep critical sections small — never perform blocking I/O or expensive work while holding a lock
+- Prefer `std::jthread` (auto-joining) over `std::thread`; every thread must be joined before it is destroyed
+- Never let an exception escape a thread's entry function — catch it at the thread boundary
+
+```cpp
+template <typename T>
+class ThreadSafeQueue
+{
+public:
+	void push(T value)
+	{
+		{
+			std::scoped_lock lock{m_mutex};
+			m_queue.push(std::move(value));
+		}
+		m_cond.notify_one();
+	}
+
+	T waitAndPop()
+	{
+		std::unique_lock lock{m_mutex};
+		m_cond.wait(lock, [this] { return !m_queue.empty(); });
+		T value = std::move(m_queue.front());
+		m_queue.pop();
+		return value;
+	}
+
+private:
+	std::mutex m_mutex;
+	std::condition_variable m_cond;
+	std::queue<T> m_queue;
+};
+```
+
+---
+
 ## Functions & Methods
 
 - One responsibility per function; max **40 lines**, max **5 parameters**

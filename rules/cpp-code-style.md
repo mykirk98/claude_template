@@ -12,7 +12,7 @@
 - Type prefixes (Hungarian): pointers and smart pointers use `p`, `std::string` uses `str`, integers use `n` — placed after `m_` on members (e.g., `m_pDevice`, `m_strName`, local `pWidget`, `nCount`); containers, booleans, and class-type values take no type prefix
 - Constants & `constexpr` values: `SCREAMING_SNAKE_CASE`
 - Types (classes, structs, enums, aliases, concepts): `PascalCase`
-- Namespaces: `snake_case`; template parameters: `PascalCase`
+- Template parameters: `PascalCase`
 - Macros: `SCREAMING_SNAKE_CASE` — avoid macros unless there is no alternative
 - Booleans: must start with `is`, `has`, `can`, or `should` (e.g., `isReady`, `m_hasError`)
 
@@ -31,7 +31,7 @@
 - Declarations go in headers (`.h`), definitions in `.cpp`; header-only is allowed for templates
 - Use `#pragma once` for header guards
 - One class per header, except trivial types (e.g., small POD structs or bare exception subclasses with no added methods), which may be grouped in one file
-- Namespaces mirror the directory structure
+- Do not wrap your own code in namespaces — declare it at global scope
 - Split tests into `unit/` and `integration/`, mirroring the source structure (e.g. `foo/bar.cpp` → `tests/unit/foo/bar_test.cpp`)
 
 ---

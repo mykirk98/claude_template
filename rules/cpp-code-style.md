@@ -120,5 +120,15 @@ private:
 
 ## Comments
 
-- Document all public classes, methods, and functions with `///` doc comments
+- Document all public classes, methods, and functions with Doxygen block comments (`/** ... */`) using `@brief`, `@param`, and `@return` — these surface as IDE hover tooltips
 - Explain *why*, not *what*; skip comments for simple, self-evident code
+
+```cpp
+/**
+ * @brief Set the trigger mode for the camera.
+ * @param pINodeMap Pointer to the node map
+ * @param triggerSelector Trigger type (e.g., FrameStart)
+ * @param triggerSource Trigger source (e.g., Software, Line0)
+ */
+static void setTriggerMode(GenApi::CNodeMapPtr& pINodeMap, const char* triggerSelector, const char* triggerSource);
+```

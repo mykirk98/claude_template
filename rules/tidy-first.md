@@ -1,7 +1,5 @@
 # Tidy First
 
-> Kent Beck's practice of separating structural changes (refactoring) from behavioral changes (new functionality). Independent of any specific development methodology (TDD, BDD, or otherwise).
-
 ---
 
 ## Structural vs Behavioral Changes

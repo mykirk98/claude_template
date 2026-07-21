@@ -7,6 +7,7 @@
 ## Naming Conventions
 
 - Local variables, parameters, functions, and methods: `camelCase`
+- Accessors use `get`/`set` prefixes (e.g., `getSerialNumber`, `setSavePath`)
 - Private/protected member variables: `m_` prefix (e.g., `m_size`)
 - Type prefixes (Hungarian): pointers and smart pointers use `p`, `std::string` uses `str`, integers use `n` — placed after `m_` on members (e.g., `m_pDevice`, `m_strName`, local `pWidget`, `nCount`); containers, booleans, and class-type values take no type prefix
 - Constants & `constexpr` values: `SCREAMING_SNAKE_CASE`
@@ -14,6 +15,13 @@
 - Namespaces: `snake_case`; template parameters: `PascalCase`
 - Macros: `SCREAMING_SNAKE_CASE` — avoid macros unless there is no alternative
 - Booleans: must start with `is`, `has`, `can`, or `should` (e.g., `isReady`, `m_hasError`)
+
+---
+
+## Formatting
+
+- Braces use Allman style — the opening `{` goes on its own line
+- Indent with tabs
 
 ---
 
@@ -39,11 +47,13 @@
 - Pass non-trivial inputs by `const&`; use `std::string_view` and `std::span` for non-owning parameters; pass cheap types by value
 
 ```cpp
-[[nodiscard]] std::optional<Item> parseItem(std::string_view raw) {
-    if (raw.empty()) {
-        return std::nullopt;
-    }
-    return Item{raw};
+[[nodiscard]] std::optional<Item> parseItem(std::string_view raw)
+{
+	if (raw.empty())
+	{
+		return std::nullopt;
+	}
+	return Item{raw};
 }
 ```
 
@@ -68,13 +78,17 @@
 - Mark move constructors, move assignment, and non-throwing functions `noexcept`
 
 ```cpp
-Dependency loadDependency(const std::string& dependencyId) {
-    try {
-        return registry.lookup(dependencyId);
-    } catch (const std::out_of_range& e) {
-        logger.error("Dependency not found: {}", dependencyId);
-        throw DependencyError{"Required dependency unavailable"};
-    }
+Dependency loadDependency(const std::string& dependencyId)
+{
+	try
+	{
+		return registry.lookup(dependencyId);
+	}
+	catch (const std::out_of_range& e)
+	{
+		logger.error("Dependency not found: {}", dependencyId);
+		throw DependencyError{"Required dependency unavailable"};
+	}
 }
 ```
 
@@ -87,23 +101,31 @@ Dependency loadDependency(const std::string& dependencyId) {
 - No multiple inheritance except for interface mixins
 - Mark overriding functions `override`, and classes not meant to be derived `final`
 - Keep constructors free of heavy logic — use factory functions for complex construction
+- Declare members in `public` → `protected` → `private` order
 
 ```cpp
-class ItemExporter {
+class ItemExporter
+{
 public:
-    virtual ~ItemExporter() = default;
-    virtual void exportItems(const std::vector<Item>& items) = 0;
+	virtual ~ItemExporter() = default;
+	virtual void exportItems(const std::vector<Item>& items) = 0;
 };
 
-class FileItemExporter final : public ItemExporter {
+class FileItemExporter final : public ItemExporter
+{
 public:
-    explicit FileItemExporter(Writer& writer) : m_writer{writer} {}
-    void exportItems(const std::vector<Item>& items) override {
-        m_writer.write(items);
-    }
+	explicit FileItemExporter(Writer& writer)
+		: m_writer{writer}
+	{
+	}
+
+	void exportItems(const std::vector<Item>& items) override
+	{
+		m_writer.write(items);
+	}
 
 private:
-    Writer& m_writer;
+	Writer& m_writer;
 };
 ```
 

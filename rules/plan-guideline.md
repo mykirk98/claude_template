@@ -16,6 +16,8 @@
 
 Plan structure follows `template/plan-template.md`.
 
+Write plan and log files in Korean, but keep fixed labels (Goal, Scope, Acceptance Criteria, …) and the `[Structural]`/`[Behavioral]` tags as-is.
+
 ---
 
 ## Writing Goal, Scope, and Open Questions
@@ -28,18 +30,18 @@ Plan structure follows `template/plan-template.md`.
 
 ## Writing Steps
 
-- Each step is one functional unit — a coherent piece of behavior that can be built and tested independently
+- Each step is one functional unit — a coherent unit of work that can be built and tested independently
 - Steps must be ordered by dependency (earlier steps should not rely on later ones)
 - Each step title should describe what's changing — new behavior for `[Behavioral]` steps, restructuring for `[Structural]` steps — not what code is being written
 - Never mix structural and behavioral changes (see `tidy-first.md` for the definitions) in the same step — structural steps always come first
 - Every step must include Acceptance Criteria — these define what tests need to pass for the step to be considered complete
 
 ```markdown
-- [ ] Step 1: [Structural] Extract discount calculation into a helper
+- [ ] Step 1: [Structural] 할인 계산 로직을 헬퍼로 추출
   Acceptance Criteria:
   - 기존 테스트가 모두 통과한다 (동작 변경 없음)
 
-- [ ] Step 2: [Behavioral] Add loyalty discount for returning users
+- [ ] Step 2: [Behavioral] 재구매 사용자를 위한 로열티 할인 추가
   Acceptance Criteria:
   - 3회 이상 구매한 사용자에게 10% 할인이 적용된다
   - 신규 사용자에게는 할인이 적용되지 않는다

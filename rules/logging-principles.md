@@ -16,7 +16,7 @@
 
 - Log at boundaries: process start/stop, external calls, state transitions, and caught errors
 - Include enough context (ids, keys, counts) that a single line is actionable on its own
-- When catching an error, log its cause and relevant state once, then handle or rethrow
+- When catching an error, log its cause and relevant state, then handle or rethrow
 - Prefer structured key-value fields over interpolated strings
 
 ---
@@ -24,8 +24,8 @@
 ## What Not to Log
 
 - Never log secrets, credentials, tokens, or personal data
-- Do not log the same error at every layer — log once, where it is handled
-- Do not log at `INFO` or above inside hot loops; use `DEBUG`/`TRACE`
+- Do not re-log the same error at every layer — log it once, at the layer that handles it
+- Do not emit per-iteration logs inside hot loops; drop them to `DEBUG`/`TRACE` or rate-limit
 
 ---
 

@@ -11,12 +11,12 @@
 
 ---
 
-## Pull Requests
+## Pull / Merge Requests
 
-- Open a PR for every change that lands on `main`
-- The PR title follows the commit subject format `<type>(<scope>): <subject>`
-- The PR description explains why the change was made and links related issues (`Closes #123`)
-- Keep each PR small enough to review in one pass; split large work into separate PRs
+- Open a pull/merge request (a PR on GitHub, an MR on GitLab) for every change that lands on `main`
+- Its title follows the commit subject format `<type>(<scope>): <subject>`
+- Its description explains why the change was made and links related issues (`Closes #123`)
+- Keep each one small enough to review in one pass; split large work into separate requests
 - Merge only when CI passes
 
 ---

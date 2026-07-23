@@ -29,7 +29,7 @@
 | `ci` | CI/CD configuration changes |
 | `revert` | Reverting a previous commit |
 
-- If a commit still spans multiple types, classify by outward-observable effect: `feat`/`fix` > `perf` > `refactor` > `style`
+- If a commit spans multiple types, classify by outward-observable effect: `feat`/`fix` > `perf` > `refactor` > `style`
 
 ---
 
@@ -52,8 +52,8 @@
 
 - Separate from the subject with a **blank line**
 - Explain **why** the change was made, not what was changed
-- Write each paragraph as a single line — do not insert manual line breaks (e.g. 72-char wrap) within it
-- Do not mention co-Authored by AI 
+- Write each paragraph as a single line — no manual line breaks (e.g. 72-char wrap)
+- Do not mention co-authored by AI
 
 ---
 

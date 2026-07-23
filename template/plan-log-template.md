@@ -15,7 +15,7 @@
 |-------|-------|------------|
 |       |       |            |
 
-(Write "None" if no issues occurred.)
+(문제가 없으면 "None"이라고 적는다.)
 
 ### Result
 - 

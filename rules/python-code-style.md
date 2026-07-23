@@ -16,8 +16,7 @@
 
 ## File & Module Structure
 
-- Group code by layer: entry/presentation → business logic → data access — dependency direction must follow this order, never reversed
-- Keep business logic out of the entry/presentation layer — delegate to the business logic layer
+- Group code by layer with one-way dependencies, as defined in `design-principles.md`
 - One class per file, except trivial classes (e.g., plain dataclasses or bare exception subclasses with no added methods), which may be grouped in one file
 - Split tests into `unit/` and `integration/`, mirroring the source structure with a `test_` prefix (e.g. `foo/bar.py` → `tests/unit/foo/test_bar.py`)
 

@@ -18,7 +18,8 @@ These are the two axes used to evaluate whether a design is good.
 
 A module should depend on as few details of other modules as possible.
 
-- Dependency direction across layers must be one-way, never reversed
+- Layer the code entry/presentation → business logic → data access; dependencies point one way down this stack, never reversed
+- Keep business logic out of the entry/presentation layer — delegate it downward
 - No circular references between modules
 - Avoid a function/class needing to know another class's internal state to do its job (a sign of excessive coupling)
 

@@ -27,7 +27,7 @@
 
 ## File & Module Structure
 
-- Group code by layer: entry/presentation → business logic → data access — dependency direction must follow this order, never reversed
+- Group code by layer with one-way dependencies, as defined in `design-principles.md`
 - Declarations go in headers (`.h`), definitions in `.cpp`; header-only is allowed for templates
 - Use `#pragma once` for header guards
 - One class per header, except trivial types (e.g., small POD structs or bare exception subclasses with no added methods), which may be grouped in one file

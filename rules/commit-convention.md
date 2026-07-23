@@ -16,18 +16,16 @@
 
 ## Type (required)
 
-| Type | When to use |
-|------|-------------|
-| `feat` | A new feature |
-| `fix` | A bug fix |
-| `docs` | Documentation changes only |
-| `style` | Formatting, whitespace (no logic change) |
-| `refactor` | Code restructuring with no feature or bug change |
-| `test` | Adding or updating tests |
-| `chore` | Build process, dependency updates, tooling |
-| `perf` | Performance improvements |
-| `ci` | CI/CD configuration changes |
-| `revert` | Reverting a previous commit |
+- `feat` — a new feature
+- `fix` — a bug fix
+- `docs` — documentation changes only
+- `style` — formatting, whitespace (no logic change)
+- `refactor` — code restructuring with no feature or bug change
+- `test` — adding or updating tests
+- `chore` — build process, dependency updates, tooling
+- `perf` — performance improvements
+- `ci` — CI/CD configuration changes
+- `revert` — reverting a previous commit
 
 - If a commit spans multiple types, classify by outward-observable effect: `feat`/`fix` > `perf` > `refactor` > `style`
 

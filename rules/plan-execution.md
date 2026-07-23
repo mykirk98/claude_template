@@ -7,20 +7,20 @@
 
 ## Execution Rules
 
-### 1. One task at a time
+### 1. One step at a time
 - Execute only the **first unchecked** `- [ ]` item in the list — never move on to the next until it is complete.
 
 ### 2. All completion criteria must be met
-- If a task includes `Acceptance Criteria:`, every criterion must be satisfied before the task is considered done.
-- If no criteria are listed, use the task description itself as the standard.
+- If a step includes `Acceptance Criteria:`, every criterion must be satisfied before the step is considered done.
+- If no criteria are listed, use the step description itself as the standard.
 
 ### 3. Stop after completion
-- When a task is done, update `- [ ]` to `- [x]`.
+- When a step is done, update `- [ ]` to `- [x]`.
 - Then **stop immediately** and wait for human review — do not resume until approved.
 
 ### 4. Stay within scope
-- Do not modify any file, module, or feature not mentioned in the task.
-- Do not touch code that "seems like it could use improvement" if it is outside the task scope.
+- Do not modify any file, module, or feature not mentioned in the step.
+- Do not touch code that "seems like it could use improvement" if it is outside the step scope.
 - If out-of-scope work appears necessary, report it to the human instead of acting on it.
 
 ### 5. Write a log entry after each step

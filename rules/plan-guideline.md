@@ -16,7 +16,7 @@
 
 Plan structure follows `template/plan-template.md`.
 
-Write plan and log files in Korean, but keep fixed labels (Goal, Scope, Acceptance Criteria, …) and the `[Structural]`/`[Behavioral]` tags as-is.
+Write plan and log files in Korean, but keep the fixed labels from `template/plan-template.md` and the `[Structural]`/`[Behavioral]` tags as-is.
 
 ---
 
@@ -30,7 +30,7 @@ Write plan and log files in Korean, but keep fixed labels (Goal, Scope, Acceptan
 
 ## Writing Steps
 
-- Each step is one functional unit — a coherent unit of work that can be built and tested independently
+- Each step is one functional unit — a coherent unit of work that can be built and verified independently
 - Steps must be ordered by dependency (earlier steps should not rely on later ones)
 - Each step title should describe what's changing — new behavior for `[Behavioral]` steps, restructuring for `[Structural]` steps — not what code is being written
 - Never mix structural and behavioral changes (see `tidy-first.md` for the definitions) in the same step — structural steps always come first

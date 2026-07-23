@@ -1,6 +1,6 @@
 # Design Principles
 
-> Defines the design evaluation criteria (cohesion, coupling) and the concrete rules (SOLID) used to achieve them.
+> Design evaluation criteria (cohesion, coupling) and the SOLID rules to achieve them.
 
 ---
 
@@ -26,7 +26,7 @@
 
 One class, one reason to change.
 
-- Violation signal: two or more unrelated reasons this class would need to change
+- Violation signal: two or more unrelated reasons to change
 
 ### O — Open/Closed Principle
 
@@ -36,7 +36,7 @@ Open for extension, closed for modification.
 
 ### L — Liskov Substitution Principle
 
-A subclass must be usable wherever its parent class is expected, without breaking behavior.
+Usable wherever its parent is expected, without breaking behavior.
 
 - Violation signal: subclass raises new exceptions or imposes stricter preconditions than its parent promises
 
@@ -44,10 +44,10 @@ A subclass must be usable wherever its parent class is expected, without breakin
 
 Don't force a class to depend on methods it doesn't use.
 
-- Violation signal: implementing interface methods you don't actually need
+- Violation signal: implementing interface methods you don't need
 
 ### D — Dependency Inversion Principle
 
-High-level modules (services) must depend on abstractions, not concrete low-level implementations.
+High-level modules (services) depend on abstractions, not concrete implementations.
 
 - Violation signal: a service instantiates a concrete class directly instead of receiving it

@@ -6,22 +6,17 @@
 
 ## Cohesion & Coupling
 
-These are the two axes used to evaluate whether a design is good.
-
 ### Cohesion — keep high
 
 - Methods in a class should operate on the same fields/state
-- If a class's methods split into groups that never touch the same data, it should be split into separate classes
-- Smell: an `ItemManager` that both validates items and logs analytics events — split into `ItemValidator` and `AnalyticsLogger`
+- If a class's methods split into groups that never touch the same data, split it into separate classes
 
 ### Coupling — keep low
-
-A module should depend on as few details of other modules as possible.
 
 - Layer the code entry/presentation → business logic → data access; dependencies point one way down this stack, never reversed
 - Keep business logic out of the entry/presentation layer — delegate it downward
 - No circular references between modules
-- Avoid a function/class needing to know another class's internal state to do its job (a sign of excessive coupling)
+- Avoid a function/class needing to know another class's internal state to do its job
 
 ---
 

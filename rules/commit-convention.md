@@ -12,15 +12,9 @@
 [footer]
 ```
 
-- **type**: required
-- **scope**: required — the module, component, or area affected
-- **subject**: required
-- **body**: optional — explain *why*, not *what*
-- **footer**: optional — issue references, breaking changes
-
 ---
 
-## Types
+## Type (required)
 
 | Type | When to use |
 |------|-------------|
@@ -39,7 +33,13 @@
 
 ---
 
-## Subject Line Rules
+## Scope (required)
+
+- the module, component, or area affected
+
+---
+
+## Subject (required)
 
 - Use the **imperative mood**: `add`, `fix`, `update` — not `added`, `fixes`, `updated`
 - Keep it under **50 characters**
@@ -48,7 +48,7 @@
 
 ---
 
-## Body Rules
+## Body (optional)
 
 - Separate from the subject with a **blank line**
 - Explain **why** the change was made, not what was changed
@@ -57,7 +57,7 @@
 
 ---
 
-## Footer Rules
+## Footer (optional)
 
 ### Issue References
 
@@ -74,7 +74,7 @@
 
 ---
 
-## Commit Discipline
+## Commit Practices
 
 - Keep unrelated changes in separate commits
 - Only commit when all tests, the formatter, and the linter pass cleanly — run the tools specified in the relevant `*-code-style.md`

@@ -78,4 +78,5 @@
 
 - Keep unrelated changes in separate commits
 - Only commit when all tests pass
+- Only commit when the project's formatter and linter pass cleanly — run the tools specified in the relevant `*-code-style.md`
 - Prefer small, frequent commits over large, infrequent ones

@@ -20,8 +20,7 @@
 
 ## Formatting
 
-- Braces use Allman style — the opening `{` goes on its own line
-- Indent with tabs
+- Brace style, indentation (4 spaces, no tabs), and line wrapping are governed by `clang-format -style=Microsoft`, not manual judgment
 
 ---
 
@@ -49,11 +48,11 @@
 ```cpp
 [[nodiscard]] std::optional<Item> parseItem(std::string_view raw)
 {
-	if (raw.empty())
-	{
-		return std::nullopt;
-	}
-	return Item{raw};
+    if (raw.empty())
+    {
+        return std::nullopt;
+    }
+    return Item{raw};
 }
 ```
 
@@ -82,28 +81,28 @@ template <typename T>
 class ThreadSafeQueue
 {
 public:
-	void push(T value)
-	{
-		{
-			std::scoped_lock lock{m_mutex};
-			m_queue.push(std::move(value));
-		}
-		m_cond.notify_one();
-	}
+    void push(T value)
+    {
+        {
+            std::scoped_lock lock{m_mutex};
+            m_queue.push(std::move(value));
+        }
+        m_cond.notify_one();
+    }
 
-	T waitAndPop()
-	{
-		std::unique_lock lock{m_mutex};
-		m_cond.wait(lock, [this] { return !m_queue.empty(); });
-		T value = std::move(m_queue.front());
-		m_queue.pop();
-		return value;
-	}
+    T waitAndPop()
+    {
+        std::unique_lock lock{m_mutex};
+        m_cond.wait(lock, [this] { return !m_queue.empty(); });
+        T value = std::move(m_queue.front());
+        m_queue.pop();
+        return value;
+    }
 
 private:
-	std::mutex m_mutex;
-	std::condition_variable m_cond;
-	std::queue<T> m_queue;
+    std::mutex m_mutex;
+    std::condition_variable m_cond;
+    std::queue<T> m_queue;
 };
 ```
 
@@ -121,15 +120,15 @@ private:
 ```cpp
 Dependency loadDependency(const std::string& dependencyId)
 {
-	try
-	{
-		return registry.lookup(dependencyId);
-	}
-	catch (const std::out_of_range& e)
-	{
-		logger.error("Dependency not found: {}", dependencyId);
-		throw DependencyError{"Required dependency unavailable"};
-	}
+    try
+    {
+        return registry.lookup(dependencyId);
+    }
+    catch (const std::out_of_range& e)
+    {
+        logger.error("Dependency not found: {}", dependencyId);
+        throw DependencyError{"Required dependency unavailable"};
+    }
 }
 ```
 
@@ -148,25 +147,25 @@ Dependency loadDependency(const std::string& dependencyId)
 class ItemExporter
 {
 public:
-	virtual ~ItemExporter() = default;
-	virtual void exportItems(const std::vector<Item>& items) = 0;
+    virtual ~ItemExporter() = default;
+    virtual void exportItems(const std::vector<Item>& items) = 0;
 };
 
 class FileItemExporter final : public ItemExporter
 {
 public:
-	explicit FileItemExporter(Writer& writer)
-		: m_writer{writer}
-	{
-	}
+    explicit FileItemExporter(Writer& writer)
+        : m_writer{writer}
+    {
+    }
 
-	void exportItems(const std::vector<Item>& items) override
-	{
-		m_writer.write(items);
-	}
+    void exportItems(const std::vector<Item>& items) override
+    {
+        m_writer.write(items);
+    }
 
 private:
-	Writer& m_writer;
+    Writer& m_writer;
 };
 ```
 

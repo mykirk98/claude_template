@@ -32,5 +32,5 @@
 ## How
 
 - Use a logging library — never `print` / `std::cout` for real logging
-- Logging must not block hot paths; log asynchronously when on a critical path
+- Never block hot paths — log asynchronously there
 - Write self-contained, greppable messages that state facts, not narration

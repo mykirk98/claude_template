@@ -1,5 +1,5 @@
 # TDD Principles
- 
+
 > Follows Kent Beck's Test-Driven Development cycle.
 
 ---
@@ -37,9 +37,4 @@ When fixing a bug:
 
 ## Workflow for New Features
 
-1. Write a simple failing test for a small part of the feature
-2. Implement the bare minimum to make it pass
-3. Run all tests — confirm green
-4. Make structural changes if needed (see `tidy-first.md`), run tests after each change
-5. Add the next failing test for the next increment
-6. Repeat until the feature is complete
+Repeat the TDD Cycle for one small increment at a time until the feature is complete. Between increments, run the full suite to catch regressions and make any structural changes per `tidy-first.md`.

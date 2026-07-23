@@ -23,6 +23,12 @@
 
 ---
 
+## Formatting
+
+- Line length and wrapping are governed by `ruff format`, not manual judgment
+
+---
+
 ## Type Annotations
 
 - Always annotate function parameters and return types — no exceptions

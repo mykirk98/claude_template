@@ -19,5 +19,5 @@
 ## Rules
 
 - Always make structural changes first when both are needed
-- Validate structural changes do not alter behavior by running tests before and after
+- Run tests before and after to confirm no behavior change
 - Commit structural changes separately from and before behavioral changes

@@ -1,22 +1,21 @@
 # Plan Execution Guideline
 
-> This document defines how Claude Code reads and executes `plan.md`.
-> For how to write a plan, see `plan-guideline.md`.
+> How Claude Code reads and executes `plan.md`. To write a plan, see `plan-guideline.md`.
 
 ---
 
 ## Execution Rules
 
 ### 1. One step at a time
-- Execute only the **first unchecked** `- [ ]` item in the list — never move on to the next until it is complete.
+- Execute only the **first unchecked** `- [ ]` item — never move on to the next until it is complete.
 
 ### 2. All completion criteria must be met
-- If a step includes `Acceptance Criteria:`, every criterion must be satisfied before the step is considered done.
+- If a step includes `Acceptance Criteria:`, every criterion must be met before the step is done.
 - If no criteria are listed, use the step description itself as the standard.
 
 ### 3. Stop after completion
 - When a step is done, update `- [ ]` to `- [x]`.
-- Then **stop immediately** and wait for human review — do not resume until approved.
+- **Stop immediately** and wait for human review — do not resume until approved.
 
 ### 4. Stay within scope
 - Do not modify any file, module, or feature not mentioned in the step.
@@ -25,9 +24,7 @@
 
 ### 5. Write a log entry after each step
 - When a step is complete, append an entry to the log file before stopping.
-- Log file location: same directory as the plan file.
-- Log file naming: `<plan-filename>-log.md` (e.g. `plan01.md` → `plan01-log.md`).
-- If the log file does not exist, create it.
+- Log file: `<plan-filename>-log.md` in the plan's directory (e.g. `plan01.md` → `plan01-log.md`); create it if absent.
 
 Each log entry must follow the format in `template/plan-log-template.md`.
 

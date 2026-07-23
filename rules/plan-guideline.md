@@ -16,7 +16,7 @@
 
 Plan structure follows `template/plan-template.md`.
 
-Write plan and log files in Korean, but keep the fixed labels from `template/plan-template.md` and the `[Structural]`/`[Behavioral]` tags as-is.
+Write plan and log files in Korean, but keep the template's fixed labels and the `[Structural]`/`[Behavioral]` tags as-is.
 
 ---
 
@@ -30,11 +30,11 @@ Write plan and log files in Korean, but keep the fixed labels from `template/pla
 
 ## Writing Steps
 
-- Each step is one functional unit — a coherent unit of work that can be built and verified independently
+- Each step is a coherent unit of work that can be built and verified independently
 - Steps must be ordered by dependency (earlier steps should not rely on later ones)
 - Each step title should describe what's changing — new behavior for `[Behavioral]` steps, restructuring for `[Structural]` steps — not what code is being written
 - Never mix structural and behavioral changes (see `tidy-first.md` for the definitions) in the same step — structural steps always come first
-- Every step must include Acceptance Criteria — these define what tests need to pass for the step to be considered complete
+- Every step must include Acceptance Criteria — these define what tests need to pass for the step to be complete
 
 ```markdown
 - [ ] Step 1: [Structural] 할인 계산 로직을 헬퍼로 추출

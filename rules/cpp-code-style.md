@@ -20,7 +20,7 @@
 
 ## Tooling
 
-- Formatter: `clang-format -style=Microsoft` — governs brace style, indentation (4 spaces, no tabs), and line wrapping, not manual judgment
+- Formatter: `clang-format` — governs brace style, indentation (4 spaces, no tabs), and line wrapping; see `.clang-format`
 - Linter: `clang-tidy` — enforces the checkable rules in this guide; see `.clang-tidy` for the enabled checks
 
 ---

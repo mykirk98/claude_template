@@ -25,7 +25,7 @@
 
 ## Tooling
 
-- Formatter: `ruff format` — governs line length and wrapping, not manual judgment
+- Formatter: `ruff format` — governs line length and wrapping
 - Linter: `ruff check` — enforces the checkable rules in this guide; see `pyproject.toml` for the enabled rule set
 
 ---

@@ -1,5 +1,7 @@
 # Git Commit Convention
 
+> How to format commit messages and when to commit.
+
 ---
 
 ## Format

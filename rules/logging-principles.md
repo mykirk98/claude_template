@@ -1,5 +1,7 @@
 # Logging Principles
 
+> What, when, and how to log.
+
 ---
 
 ## Levels

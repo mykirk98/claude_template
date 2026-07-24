@@ -1,5 +1,7 @@
 # Git Workflow
 
+> Conventions for landing a change on `main`.
+
 ---
 
 ## Branching

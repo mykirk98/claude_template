@@ -1,5 +1,7 @@
 # Plan Guideline
 
+> How to write a plan.
+
 ---
 
 ## Workflow

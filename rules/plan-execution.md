@@ -1,6 +1,6 @@
 # Plan Execution Guideline
 
-> How Claude Code reads and executes `plan.md`. To write a plan, see `plan-guideline.md`.
+> How Claude Code reads and executes `plan.md`.
 
 ---
 

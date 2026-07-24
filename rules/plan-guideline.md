@@ -16,7 +16,7 @@
 
 ## Plan Structure
 
-Plan structure follows `template/plan-template.md`.
+Plan structure follows `.claude/template/plan-template.md`.
 
 Write plan and log files in Korean, but keep the template's fixed labels and the `[Structural]`/`[Behavioral]` tags as-is.
 

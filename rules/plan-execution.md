@@ -26,7 +26,7 @@
 - When a step is complete, append an entry to the log file before stopping.
 - Log file: `<plan-filename>-log.md` in the plan's directory (e.g. `plan01.md` → `plan01-log.md`); create it if absent.
 
-Each log entry must follow the format in `template/plan-log-template.md`.
+Each log entry must follow the format in `.claude/template/plan-log-template.md`.
 
 ### 6. Commit after each step
 - When a step is complete, commit the code changes following `commit-convention.md`.
